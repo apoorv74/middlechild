@@ -80,7 +80,9 @@ as_httr_req <- function(entry, quiet = TRUE) {
             )
           )
         ), collapse = "")
-    }
+    } else {
+      bdy_bits <- ""
+    } 
 
     bdy <- sprintf(", body = %s", bdy_bits)
 
