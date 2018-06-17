@@ -71,7 +71,7 @@ as_httr_req <- function(entry, quiet = TRUE) {
   # TODO handle other mimeTypes
   if ((mthd == "POST") & (length(req$postData) > 0)) {
 
-    if (req$postData$mimeType == "application/json") {
+    if (req$postData$mimeType %in% c("application/json","application/json; charset=UTF-8" )) {
       bdy_bits <- paste0(
         capture.output(
           dput(
